@@ -3522,7 +3522,7 @@ vcfKeep = Channel.empty().mix(
 process BcftoolsStats {
     label 'cpus_1'
 
-    tag "${variantCaller} - ${vcf}"
+    tag "${variantCaller}-${vcf}"
 
     publishDir "${params.outdir}/Reports/${idSample}/BCFToolsStats", mode: params.publish_dir_mode
 
@@ -3545,7 +3545,7 @@ bcftoolsReport = bcftoolsReport.dump(tag:'BCFTools')
 process Vcftools {
     label 'cpus_1'
 
-    tag "${variantCaller} - ${vcf}"
+    tag "${variantCaller}-${vcf}"
 
     publishDir "${params.outdir}/Reports/${idSample}/VCFTools", mode: params.publish_dir_mode
 
